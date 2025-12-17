@@ -7,6 +7,7 @@ import { SignIn } from "@/components/sign-in";
 import { SignUp } from "@/components/sign-up";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient, trpc } from "@/utils/trpc";
+import { SocialConnections } from "@/components/social-connections";
 
 export default function Home() {
 	const healthCheck = useQuery(trpc.healthCheck.queryOptions());
@@ -103,6 +104,7 @@ export default function Home() {
 				<>
 					<SignIn />
 					<SignUp />
+					<SocialConnections />
 				</>
 			)}
 		</Container>

@@ -2,14 +2,15 @@ name: my-better-t-app
 
 services:
   postgres:
-    image: postgres
+    image: postgis/postgis:18-3.6
+    platform: linux/amd64 # Change if you are using a different platform
     container_name: my-better-t-app-postgres
     environment:
       POSTGRES_DB: my-better-t-app
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - my-better-t-app_postgres_data:/var/lib/postgresql
     healthcheck:
